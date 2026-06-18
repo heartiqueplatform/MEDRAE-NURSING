@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeartPulse, Twitter, Instagram, Linkedin, Youtube, Inbox, MapPin } from 'lucide-react';
+import { Twitter, Instagram, Linkedin, Youtube, Inbox, MapPin, Phone, Mail, Facebook } from 'lucide-react';
 
 interface FooterProps {
   scrollToSection: (id: string) => void;
@@ -9,10 +9,10 @@ export default function Footer({ scrollToSection }: FooterProps) {
   const currentYear = 2026;
 
   const socialLinks = [
-    { icon: <Twitter className="w-4 h-4" />, href: 'https://twitter.com', label: 'Twitter' },
-    { icon: <Instagram className="w-4 h-4" />, href: 'https://instagram.com', label: 'Instagram' },
-    { icon: <Linkedin className="w-4 h-4" />, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: <Youtube className="w-4 h-4" />, href: 'https://youtube.com', label: 'YouTube' }
+    { icon: <Facebook className="w-4 h-4" />, href: 'https://facebook.com/medraenursing', label: 'Facebook' },
+    { icon: <Twitter className="w-4 h-4" />, href: 'https://twitter.com/medraenursing', label: 'Twitter/X' },
+    { icon: <Instagram className="w-4 h-4" />, href: 'https://instagram.com/medraenursing', label: 'Instagram' },
+    { icon: <Youtube className="w-4 h-4" />, href: 'https://youtube.com/@medraenursingke', label: 'TikTok' },
   ];
 
   return (
@@ -31,35 +31,41 @@ export default function Footer({ scrollToSection }: FooterProps) {
               onClick={() => scrollToSection('hero')}
               className="flex items-center gap-2 cursor-pointer group w-fit"
             >
-              <div className="bg-gradient-to-br from-emerald-500 to-teal-600 p-2 rounded-lg text-white shadow-lg shadow-emerald-500/20 dark:shadow-emerald-500/30">
-                <HeartPulse className="w-5 h-5 animate-pulse" />
-              </div>
+              {/* PWA Icon Image */}
+              <img
+                src="/pwa-192x192.png"
+                alt="Medrae Nursing"
+                className="w-9 h-9 rounded-lg shadow-lg shadow-red-500/20 dark:shadow-red-500/30 transition-transform group-hover:scale-105"
+              />
               <span className="font-display font-bold text-lg transition-colors duration-300
                 text-gray-800 dark:text-white">
                 <span className="text-red-600 dark:text-red-500">Medrae</span>
-                <span className="text-emerald-600 dark:text-emerald-400">Nursing</span>
+                <span className="text-gray-900 dark:text-white">Nursing</span>
               </span>
             </div>
             <p className="font-sans text-xs sm:text-sm max-w-sm leading-relaxed transition-colors duration-300
               text-gray-600 dark:text-gray-400">
               Leading the 2026 nursing study standard. We empower future and practicing nurses with the analytical thinking, diagnostic rapid-recall, and clinical reasoning skills needed for career and licensure excellence.
             </p>
-            {/* Social collection */}
+            {/* Social collection - Updated with all handles */}
             <div className="flex items-center gap-3 pt-2">
-              {socialLinks.map((social, i) => (
-                <a
-                  key={i}
-                  href={social.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={social.label}
-                  className="p-2 rounded-lg transition-all duration-150 cursor-pointer
-                    bg-gray-100 text-gray-600 hover:bg-emerald-100 hover:text-emerald-600
-                    dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
-                >
-                  {social.icon}
-                </a>
-              ))}
+              <span className="text-[10px] font-mono text-gray-400 dark:text-gray-500">@medraenursing</span>
+              <div className="flex items-center gap-2">
+                {socialLinks.map((social, i) => (
+                  <a
+                    key={i}
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={social.label}
+                    className="p-2 rounded-lg transition-all duration-150 cursor-pointer
+                      bg-gray-100 text-gray-600 hover:bg-red-100 hover:text-red-600
+                      dark:bg-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -75,7 +81,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
                 <button
                   onClick={() => scrollToSection('about')}
                   className="transition-colors cursor-pointer text-left w-full
-                    hover:text-emerald-600 dark:hover:text-emerald-400"
+                    hover:text-red-600 dark:hover:text-red-400"
                 >
                   About Platform
                 </button>
@@ -84,7 +90,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
                 <button
                   onClick={() => scrollToSection('quiz')}
                   className="transition-colors cursor-pointer text-left w-full
-                    hover:text-emerald-600 dark:hover:text-emerald-400"
+                    hover:text-red-600 dark:hover:text-red-400"
                 >
                   Interactive Mini Quiz
                 </button>
@@ -93,7 +99,7 @@ export default function Footer({ scrollToSection }: FooterProps) {
                 <button
                   onClick={() => scrollToSection('features')}
                   className="transition-colors cursor-pointer text-left w-full
-                    hover:text-emerald-600 dark:hover:text-emerald-400"
+                    hover:text-red-600 dark:hover:text-red-400"
                 >
                   Key Student Features
                 </button>
@@ -104,18 +110,18 @@ export default function Footer({ scrollToSection }: FooterProps) {
                   target="_blank"
                   rel="noreferrer"
                   className="transition-colors flex items-center gap-1.5
-                    hover:text-emerald-600 dark:hover:text-emerald-400"
+                    hover:text-red-600 dark:hover:text-red-400"
                 >
                   <span>Medrae Main Web-App</span>
                   <span className="text-[9px] px-1.5 py-0.5 rounded-full uppercase font-mono
-                    bg-emerald-100 text-emerald-700
-                    dark:bg-emerald-500/10 dark:text-emerald-400">LIVE</span>
+                    bg-red-100 text-red-700
+                    dark:bg-red-500/10 dark:text-red-400">LIVE</span>
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Contact Support Column */}
+          {/* Contact Support Column - Updated with real contacts */}
           <div className="md:col-span-4 space-y-4">
             <h4 className="font-display font-bold text-sm uppercase tracking-wider transition-colors duration-300
               text-gray-700 dark:text-gray-200">
@@ -123,32 +129,87 @@ export default function Footer({ scrollToSection }: FooterProps) {
             </h4>
             <ul className="space-y-3 font-sans text-xs sm:text-sm transition-colors duration-300
               text-gray-600 dark:text-gray-400">
+
+              {/* Email */}
               <li className="flex items-start gap-2.5">
-                <Inbox className="w-4 h-4 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400" />
+                <Mail className="w-4 h-4 mt-0.5 shrink-0 text-red-600 dark:text-red-400" />
                 <div>
                   <div className="text-[10px] uppercase font-mono tracking-wider
                     text-gray-400 dark:text-gray-500">
                     EMAIL SUPPORT
                   </div>
-                  <a href="mailto:support@medraenursing.com" className="transition-colors
-                    text-gray-700 hover:text-emerald-600
-                    dark:text-gray-300 dark:hover:text-emerald-400">
-                    support@medraenursing.com
+                  <a href="mailto:medraenursing@gmail.com" className="transition-colors
+                    text-gray-700 hover:text-red-600
+                    dark:text-gray-300 dark:hover:text-red-400">
+                    medraenursing@gmail.com
                   </a>
                 </div>
               </li>
+
+              {/* WhatsApp/Call */}
               <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-emerald-600 dark:text-emerald-400" />
+                <Phone className="w-4 h-4 mt-0.5 shrink-0 text-green-600 dark:text-green-400" />
                 <div>
                   <div className="text-[10px] uppercase font-mono tracking-wider
                     text-gray-400 dark:text-gray-500">
-                    HEADQUARTERS
+                    WHATSAPP & CALL
                   </div>
-                  <span className="block leading-tight transition-colors duration-300
-                    text-gray-700 dark:text-gray-300">
-                    750 Medical Plaza Dr., Suite 201 <br />
-                    Boston, MA 02111
-                  </span>
+                  <a href="tel:+254704473503" className="transition-colors
+                    text-gray-700 hover:text-green-600
+                    dark:text-gray-300 dark:hover:text-green-400">
+                    +254 704 473 503
+                  </a>
+                </div>
+              </li>
+
+              {/* Social Handles */}
+              <li className="flex items-start gap-2.5">
+                <Inbox className="w-4 h-4 mt-0.5 shrink-0 text-blue-600 dark:text-blue-400" />
+                <div>
+                  <div className="text-[10px] uppercase font-mono tracking-wider
+                    text-gray-400 dark:text-gray-500">
+                    SOCIAL MEDIA
+                  </div>
+                  <div className="flex flex-wrap gap-2 mt-1">
+                    <a
+                      href="https://facebook.com/medraenursing"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-xs text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
+                    >
+                      Facebook
+                    </a>
+                    <span className="text-gray-300 dark:text-gray-700">|</span>
+                    <a
+                      href="https://twitter.com/medraenursing"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-xs text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
+                    >
+                      X
+                    </a>
+                    <span className="text-gray-300 dark:text-gray-700">|</span>
+                    <a
+                      href="https://instagram.com/medraenursing"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-xs text-gray-700 hover:text-pink-600 dark:text-gray-300 dark:hover:text-pink-400 transition-colors"
+                    >
+                      Instagram
+                    </a>
+                    <span className="text-gray-300 dark:text-gray-700">|</span>
+                    <a
+                      href="https://tiktok.com/@medraenursingke"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-xs text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white transition-colors"
+                    >
+                      TikTok
+                    </a>
+                  </div>
+                  <div className="text-[10px] text-gray-400 dark:text-gray-500 mt-0.5">
+                    @medraenursing everywhere
+                  </div>
                 </div>
               </li>
             </ul>
@@ -164,11 +225,18 @@ export default function Footer({ scrollToSection }: FooterProps) {
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-right">
             <div className="flex items-center gap-4 justify-center">
-              <a href="#privacy" className="transition-colors hover:text-emerald-600 dark:hover:text-emerald-400">
+
+              <a
+                onClick={() => scrollToSection('privacy')}
+                className="transition-colors hover:text-red-600 dark:hover:text-red-400 cursor-pointer"
+              >
                 Privacy Policy
               </a>
               <span className="text-gray-300 dark:text-gray-700">|</span>
-              <a href="#terms" className="transition-colors hover:text-emerald-600 dark:hover:text-emerald-400">
+              <a
+                onClick={() => scrollToSection('terms')}
+                className="transition-colors hover:text-red-600 dark:hover:text-red-400 cursor-pointer"
+              >
                 Terms of Service
               </a>
             </div>

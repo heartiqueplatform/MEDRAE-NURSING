@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { HeartPulse, Menu, X, Sun, Moon, Sparkles } from 'lucide-react';
+import { Menu, X, Sun, Moon, Sparkles } from 'lucide-react';
 
 interface HeaderProps {
   isDarkMode: boolean;
@@ -29,29 +29,29 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-        ? 'bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-emerald-100/30 dark:border-slate-800/50 shadow-lg shadow-emerald-500/5 dark:shadow-slate-800/20 py-3'
+        ? 'bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-b border-slate-200/30 dark:border-slate-800/50 shadow-lg shadow-slate-500/5 dark:shadow-slate-800/20 py-3'
         : 'bg-transparent py-5'
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
 
-          {/* Logo */}
+          {/* Logo with PWA Icon */}
           <div
             onClick={() => scrollToSection('hero')}
             className="flex items-center gap-2.5 cursor-pointer group"
           >
-            <div className="relative">
-              <div className={`absolute inset-0 rounded-xl blur-md opacity-30 group-hover:opacity-60 transition-opacity ${isDarkMode ? 'bg-emerald-500' : 'bg-emerald-400'
-                }`} />
-              <div className="relative bg-gradient-to-br from-emerald-500 to-teal-600 p-2 rounded-xl text-white shadow-lg shadow-emerald-500/20 dark:shadow-emerald-500/30">
-                <HeartPulse className="w-5.5 h-5.5 animate-soft-pulse" />
-              </div>
-            </div>
+            {/* PWA Icon Image */}
+            <img
+              src="/pwa-192x192.png"
+              alt="Medrae Nursing"
+              className="w-10 h-10 rounded-xl shadow-lg shadow-emerald-500/20 dark:shadow-emerald-500/30 transition-transform group-hover:scale-105"
+            />
+
             <div>
               <span className="font-display font-black text-xl tracking-tight transition-colors duration-200">
                 <span className="text-red-600 dark:text-red-500">Medrae</span>
-                <span className="text-emerald-600 dark:text-emerald-400">Nursing</span>
+                <span className="text-slate-900 dark:text-white">Nursing</span>
               </span>
               <div className="text-[9px] font-mono font-bold leading-none tracking-widest uppercase transition-colors duration-200">
                 <span className="text-slate-500 dark:text-slate-400">EdTech Platform</span>
@@ -66,12 +66,12 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className="font-sans font-semibold text-sm transition-colors duration-200 cursor-pointer relative py-1 group
-                  text-slate-600 hover:text-emerald-600
-                  dark:text-slate-300 dark:hover:text-emerald-400"
+                  text-slate-600 hover:text-red-600
+                  dark:text-slate-300 dark:hover:text-red-400"
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-200 group-hover:w-full
-                  bg-emerald-600 dark:bg-emerald-400" />
+                  bg-red-600 dark:bg-red-400" />
               </button>
             ))}
           </nav>
@@ -113,9 +113,9 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
               target="_blank"
               rel="noreferrer"
               className="relative inline-flex items-center gap-1.5 px-5 py-2.5 font-sans font-bold text-sm rounded-xl shadow-md transition-all duration-150 cursor-pointer
-                bg-gradient-to-r from-emerald-600 to-teal-600 text-white
-                hover:shadow-lg hover:shadow-emerald-500/30
-                dark:from-emerald-500 dark:to-teal-600 dark:hover:shadow-emerald-500/20"
+                bg-gradient-to-r from-red-600 to-blue-600 text-white
+                hover:shadow-lg hover:shadow-red-500/30
+                dark:from-red-500 dark:to-blue-600 dark:hover:shadow-red-500/20"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
             >
@@ -174,7 +174,7 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
             className="md:hidden overflow-hidden shadow-xl
-              bg-white/95 backdrop-blur-xl border-b border-emerald-100/30
+              bg-white/95 backdrop-blur-xl border-b border-slate-200/30
               dark:bg-slate-900/95 dark:border-slate-800/50"
           >
             <div className="px-4 pt-3 pb-6 space-y-3">
@@ -186,7 +186,7 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
                     setIsOpen(false);
                   }}
                   className="block w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors cursor-pointer
-                    text-slate-700 hover:bg-emerald-50/50
+                    text-slate-700 hover:bg-red-50/50
                     dark:text-slate-200 dark:hover:bg-slate-800/60"
                 >
                   {item.label}
@@ -198,8 +198,8 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-center justify-center gap-2 w-full py-3 rounded-xl text-center font-bold shadow-md cursor-pointer
-                    bg-gradient-to-r from-emerald-600 to-teal-600 text-white
-                    dark:from-emerald-500 dark:to-teal-600"
+                    bg-gradient-to-r from-red-600 to-blue-600 text-white
+                    dark:from-red-500 dark:to-blue-600"
                 >
                   <Sparkles className="w-4 h-4" />
                   Join Medrae App
