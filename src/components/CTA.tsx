@@ -107,7 +107,7 @@ export default function CTA() {
                 <div className="w-full bg-white dark:bg-white/5 p-5 rounded-2xl border border-slate-200 dark:border-white/10 text-left shadow-md">
                   <div className="flex items-center gap-1.5 text-xs font-semibold text-red-800 dark:text-red-400 mb-2">
                     <Bookmark className="w-4 h-4 text-red-800 dark:text-red-400" />
-                    <span>📚 Free High-Yield Nursing Exam Study Guide PDF</span>
+                    <span>Free High-Yield Nursing Exam Study Guide PDF</span>
                   </div>
 
                   <AnimatePresence mode="wait">
@@ -145,7 +145,7 @@ export default function CTA() {
                       >
                         <CheckCircle2 className="w-5 h-5 text-red-600 dark:text-red-400 shrink-0" />
                         <div>
-                          <div className="font-bold underline">✅ Check your inbox!</div>
+                          <div className="font-bold underline">Check your inbox!</div>
                           <p className="text-xs text-slate-600 dark:text-slate-300">We just emailed you the <strong>High-Yield NCK & Clinical Care Study Guide PDF</strong> pack.</p>
                         </div>
                       </motion.div>

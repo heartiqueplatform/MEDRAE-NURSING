@@ -93,7 +93,7 @@ const galleryItems: GalleryItem[] = [
 
 export default function Hero({ scrollToSection }: HeroProps) {
   return (
-    <section id="hero" className="relative min-h-screen pt-20 pb-16 flex items-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen pt-38 pb-16 flex items-center overflow-hidden">
       {/* Dynamic Background Gradients */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-[45vw] h-[45vw] bg-emerald-400/10 dark:bg-emerald-500/5 rounded-full blur-[100px] -mr-16 -mt-16 animate-soft-pulse" />
