@@ -1,0 +1,8 @@
+{
+  "name": "Medrae Nursing",
+  "description": "Complete NCK & FQE Exam Revision for Kenyan Nursing Students. All nursing units and notes in one application. Curated educational YouTube videos without distractions. DigiProctor style timed practice to reduce exam anxiety. Survival hub connecting students based on exam centers with housing options. Hospital placement board for clinical rotations. Nursmartt marketplace for secondhand nursing items like books, uniforms, and equipment. Premium access 199 KSh for 2 months including full question bank. Also developing institutional CAT and internal exam proctoring (local DigiProctor alternative) and tutor page for exam creation and result release within 12 hours, planned for December 2026.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
