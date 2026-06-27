@@ -16,7 +16,7 @@ const galleryItems: GalleryItem[] = [
       url: '/images/nursing-1.jpg',
       text: 'Clinical Practice Session',
       pos: 'center',
-      by: 'Medrae Team'
+      by: 'Medrae Nursing '
     }
   },
   {
@@ -26,7 +26,7 @@ const galleryItems: GalleryItem[] = [
       url: '/images/nursing-2.jpg',
       text: 'NCK Exam Preparation',
       pos: 'center',
-      by: 'Medrae Team'
+      by: 'Medrae Nursing '
     }
   },
   {
@@ -36,7 +36,7 @@ const galleryItems: GalleryItem[] = [
       url: '/images/nursing-3.jpg',
       text: 'Essential Nursing Concepts',
       pos: 'center',
-      by: 'Medrae Team'
+      by: 'Medrae Nursing '
     }
   },
   {
@@ -46,7 +46,7 @@ const galleryItems: GalleryItem[] = [
       url: '/images/nursing-4.jpg',
       text: 'Medical Knowledge Base',
       pos: 'center',
-      by: 'Medrae Team'
+      by: 'Medrae Nursing '
     }
   },
   {
@@ -56,7 +56,7 @@ const galleryItems: GalleryItem[] = [
       url: '/images/nursing-5.jpg',
       text: 'Patient Care Excellence',
       pos: 'center',
-      by: 'Medrae Team'
+      by: 'Medrae Nursing '
     }
   },
   {
@@ -66,7 +66,7 @@ const galleryItems: GalleryItem[] = [
       url: '/images/nursing-6.jpg',
       text: 'Clinical Skills Training',
       pos: 'center',
-      by: 'Medrae Team'
+      by: 'Medrae Nursing '
     }
   },
   {
@@ -76,7 +76,7 @@ const galleryItems: GalleryItem[] = [
       url: '/images/nursing-7.jpg',
       text: 'Nursing Education Platform',
       pos: 'center',
-      by: 'Medrae Team'
+      by: 'Medrae Nursing '
     }
   },
   {
@@ -86,7 +86,7 @@ const galleryItems: GalleryItem[] = [
       url: '/images/nursing-8.jpg',
       text: 'Healthcare Team Collaboration',
       pos: 'center',
-      by: 'Medrae Team'
+      by: 'Medrae Nursing '
     }
   }
 ];
