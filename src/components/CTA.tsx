@@ -28,7 +28,7 @@ export default function CTA() {
   };
 
   const stats = [
-    { icon: <Users className="w-5 h-5" />, value: '15,000+', label: 'Active Students' },
+    { icon: <Users className="w-5 h-5" />, value: '2,000+', label: 'Active Students' },
     { icon: <Award className="w-5 h-5" />, value: '98%', label: 'Pass Rate' },
     { icon: <Clock className="w-5 h-5" />, value: '24/7', label: 'Access' },
   ];
@@ -157,7 +157,6 @@ export default function CTA() {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
 

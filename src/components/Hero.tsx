@@ -229,10 +229,10 @@ export default function Hero({ scrollToSection }: HeroProps) {
                 <div className="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-slate-950 bg-gradient-to-tr from-sky-400 to-indigo-500 shadow-md"></div>
                 <div className="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-slate-950 bg-gradient-to-tr from-emerald-400 to-teal-500 shadow-md"></div>
                 <div className="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-slate-950 bg-gradient-to-tr from-orange-400 to-amber-500 shadow-md"></div>
-                <div className="flex items-center justify-center h-8 w-8 rounded-full ring-2 ring-white dark:ring-slate-950 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-300 shadow-md">+15k</div>
+                <div className="flex items-center justify-center h-8 w-8 rounded-full ring-2 ring-white dark:ring-slate-950 bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-500 dark:text-slate-300 shadow-md">+2k</div>
               </div>
               <span className="text-xs text-slate-500 dark:text-slate-400">
-                <span className="font-bold text-slate-700 dark:text-slate-300">15,000+</span> nursing students
+                <span className="font-bold text-slate-700 dark:text-slate-300">2,000+</span> nursing students
               </span>
             </motion.div>
           </div>

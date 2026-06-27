@@ -8,6 +8,7 @@ import CTA from './components/CTA';
 import Footer from './components/Footer';
 import Privacy from './components/Privacy';
 import Terms from './components/Terms';
+import Curriculum from './components/Curriculum';
 
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -88,7 +89,7 @@ export default function App() {
 
             {/* Structural Bento Features Column */}
             <Features />
-
+            <Curriculum scrollToSection={scrollToSection} />
             {/* Dynamic Pre-Marketing Subscribe & Reroute CTA */}
             <CTA />
           </main>
