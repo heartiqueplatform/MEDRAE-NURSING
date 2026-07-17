@@ -13,8 +13,6 @@ import Curriculum from './components/Curriculum';
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState<string>('home');
-
-  // Synchronize dark-mode attributes onto document for Tailwind selection
   useEffect(() => {
     const root = window.document.documentElement;
     if (isDarkMode) {
@@ -29,10 +27,9 @@ export default function App() {
   };
 
   const scrollToSection = (id: string) => {
-    // Check if it's a page navigation
+
     if (id === 'privacy' || id === 'terms') {
       setCurrentPage(id);
-      // Scroll to top
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -40,7 +37,7 @@ export default function App() {
       return;
     }
 
-    // If it's a section navigation, set home page
+
     setCurrentPage('home');
 
     const element = document.getElementById(id);
@@ -59,7 +56,6 @@ export default function App() {
     }
   };
 
-  // Function to go back to home
   const goToHome = () => {
     setCurrentPage('home');
     window.scrollTo({
@@ -68,7 +64,6 @@ export default function App() {
     });
   };
 
-  // Render the appropriate page
   const renderPage = () => {
     switch (currentPage) {
       case 'privacy':
@@ -78,19 +73,11 @@ export default function App() {
       default:
         return (
           <main>
-            {/* Intro Segment */}
             <Hero scrollToSection={scrollToSection} />
-
-            {/* Brand Explanation Row */}
             <About scrollToSection={scrollToSection} />
-
-            {/* Premium Interactive Challenge (Quiz) */}
             <Quiz />
-
-            {/* Structural Bento Features Column */}
             <Features />
             <Curriculum scrollToSection={scrollToSection} />
-            {/* Dynamic Pre-Marketing Subscribe & Reroute CTA */}
             <CTA />
           </main>
         );
@@ -99,29 +86,20 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-slate-900 transition-colors duration-300 dark:bg-slate-950 dark:text-white">
-
-      {/* Dynamic Background Noise/Texture */}
       <div
         className="fixed inset-0 pointer-events-none opacity-[0.03] dark:opacity-[0.015] z-[99]"
         style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}
       />
-
-      {/* Modern navigation menu */}
       <Header
         isDarkMode={isDarkMode}
         toggleDarkMode={toggleDarkMode}
         scrollToSection={scrollToSection}
       />
 
-      {/* Render Current Page */}
       {renderPage()}
-
-      {/* Only show Footer on main pages, not on privacy/terms */}
       {currentPage === 'home' && (
         <Footer scrollToSection={scrollToSection} />
       )}
-
-      {/* Show a back-to-home button on privacy/terms pages */}
       {(currentPage === 'privacy' || currentPage === 'terms') && (
         <div className="fixed bottom-6 right-6 z-50">
           <button

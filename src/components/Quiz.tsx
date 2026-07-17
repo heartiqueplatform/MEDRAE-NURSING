@@ -101,7 +101,7 @@ export default function Quiz() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-violet-400/3 dark:bg-violet-500/3 rounded-full blur-[160px]" />
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
         <div className="text-center space-y-3 mb-10 sm:mb-12">
@@ -151,10 +151,10 @@ export default function Quiz() {
                         Q{currentIdx + 1}/{QUESTIONS.length}
                       </span>
                       <span className={`font-mono text-[10px] font-bold px-2.5 py-1 rounded-full ${currentQuestion.difficulty === 'Easy'
-                          ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
-                          : currentQuestion.difficulty === 'Medium'
-                            ? 'bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400'
-                            : 'bg-rose-50 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400'
+                        ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
+                        : currentQuestion.difficulty === 'Medium'
+                          ? 'bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400'
+                          : 'bg-rose-50 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400'
                         }`}>
                         {currentQuestion.difficulty}
                       </span>
@@ -265,8 +265,8 @@ export default function Quiz() {
                           onClick={handleSubmitAnswer}
                           disabled={selectedIdx === null}
                           className={`w-full sm:w-auto px-8 py-3.5 rounded-2xl font-sans font-bold text-sm uppercase tracking-wider transition-all cursor-pointer ${selectedIdx === null
-                              ? 'bg-slate-200 dark:bg-slate-800 text-slate-400 dark:text-slate-600 cursor-not-allowed'
-                              : 'bg-gradient-to-r from-red-600 to-blue-600 hover:from-red-500 hover:to-blue-500 text-white shadow-lg shadow-red-500/20 hover:shadow-xl'
+                            ? 'bg-slate-200 dark:bg-slate-800 text-slate-400 dark:text-slate-600 cursor-not-allowed'
+                            : 'bg-gradient-to-r from-red-600 to-blue-600 hover:from-red-500 hover:to-blue-500 text-white shadow-lg shadow-red-500/20 hover:shadow-xl'
                             }`}
                         >
                           Submit Answer
@@ -320,7 +320,7 @@ export default function Quiz() {
                     </div>
                   )}
 
-                  <div className="space-y-6 relative z-10">
+                  <div className="space-y-2 relative z-10">
                     {/* Status Circle Gauge */}
                     <div className="relative w-32 h-32 mx-auto flex items-center justify-center">
                       <svg className="absolute inset-0 w-full h-full -rotate-90">

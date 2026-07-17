@@ -7,7 +7,6 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 }
 
-/* Custom dark mode support for Tailwind v4 */
 @custom-variant dark (&:where(.dark, .dark *));
 
 html {
@@ -15,7 +14,7 @@ html {
   font-family: var(--font-sans);
 }
 
-/* Custom glassy container overlays and subtle animations */
+
 .glass-panel {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
@@ -28,7 +27,7 @@ html {
   -webkit-backdrop-filter: blur(12px);
 }
 
-/* Soft pulse keyframes for learning systems */
+
 @keyframes softPulse {
 
   0%,

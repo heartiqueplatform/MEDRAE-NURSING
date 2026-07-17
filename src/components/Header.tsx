@@ -24,6 +24,7 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
     { label: 'About App', id: 'about' },
     { label: 'Free Quiz', id: 'quiz' },
     { label: 'Features', id: 'features' },
+    { label: 'Curriculum', id: 'curriculum' },
   ];
 
   return (
@@ -80,6 +81,7 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
           <div className="hidden md:flex items-center gap-4">
 
             {/* Animated Theme Switcher Button */}
+            {/*
             <motion.button
               onClick={toggleDarkMode}
               className="p-2.5 rounded-xl border transition-colors duration-150 cursor-pointer relative overflow-hidden
@@ -106,7 +108,7 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
                 </motion.div>
               </AnimatePresence>
             </motion.button>
-
+            */}
             {/* CTA action */}
             <motion.a
               href="https://medrae.vercel.app"
@@ -126,6 +128,7 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
 
           {/* Mobile Right Element: Theme Switcher & Hamburger Toggle */}
           <div className="flex items-center gap-2 md:hidden">
+            { /*
             <motion.button
               onClick={toggleDarkMode}
               className="p-2 rounded-xl border transition-colors cursor-pointer
@@ -150,7 +153,7 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
                 </motion.div>
               </AnimatePresence>
             </motion.button>
-
+*/}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg transition-colors cursor-pointer
