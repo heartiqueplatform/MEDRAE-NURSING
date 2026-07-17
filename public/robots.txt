@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://medrae-nursing.vercel.app/sitemap.xml
