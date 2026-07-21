@@ -20,6 +20,26 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Enhanced scroll function with smooth behavior
+  const handleScrollToSection = (id: string) => {
+    setIsOpen(false); // Close mobile menu first
+
+    // Small delay to allow menu to close before scrolling
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const headerOffset = 80; // Account for fixed header
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 150); // Slight delay for better UX
+  };
+
   const navItems = [
     { label: 'About App', id: 'about' },
     { label: 'Free Quiz', id: 'quiz' },
@@ -39,7 +59,7 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
 
           {/* Logo with PWA Icon */}
           <div
-            onClick={() => scrollToSection('hero')}
+            onClick={() => handleScrollToSection('hero')}
             className="flex items-center gap-2.5 cursor-pointer group"
           >
             {/* PWA Icon Image */}
@@ -65,7 +85,7 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => handleScrollToSection(item.id)}
                 className="font-sans font-semibold text-sm transition-colors duration-200 cursor-pointer relative py-1 group
                   text-slate-600 hover:text-red-600
                   dark:text-slate-300 dark:hover:text-red-400"
@@ -184,10 +204,7 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
               {navItems.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => {
-                    scrollToSection(item.id);
-                    setIsOpen(false);
-                  }}
+                  onClick={() => handleScrollToSection(item.id)}
                   className="block w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors cursor-pointer
                     text-slate-700 hover:bg-red-50/50
                     dark:text-slate-200 dark:hover:bg-slate-800/60"
