@@ -40,11 +40,13 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
     }, 150); // Slight delay for better UX
   };
 
+  // 🆕 Updated navigation items with GroupPay
   const navItems = [
     { label: 'About App', id: 'about' },
     { label: 'Free Quiz', id: 'quiz' },
     { label: 'Features', id: 'features' },
     { label: 'Curriculum', id: 'curriculum' },
+    { label: 'GroupPay', id: 'grouppay' }, // 🆕 Added GroupPay
   ];
 
   return (
@@ -86,13 +88,22 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
               <button
                 key={item.id}
                 onClick={() => handleScrollToSection(item.id)}
-                className="font-sans font-semibold text-sm transition-colors duration-200 cursor-pointer relative py-1 group
-                  text-slate-600 hover:text-red-600
-                  dark:text-slate-300 dark:hover:text-red-400"
+                className={`font-sans font-semibold text-sm transition-colors duration-200 cursor-pointer relative py-1 group
+                  ${item.id === 'grouppay'
+                    ? 'text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300'
+                    : 'text-slate-600 hover:text-red-600 dark:text-slate-300 dark:hover:text-red-400'
+                  }`}
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-200 group-hover:w-full
-                  bg-red-600 dark:bg-red-400" />
+                {item.id === 'grouppay' && (
+                  <span className="absolute -top-1 -right-2 w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                )}
+                <span className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-200 group-hover:w-full
+                  ${item.id === 'grouppay'
+                    ? 'bg-emerald-500 dark:bg-emerald-400'
+                    : 'bg-red-600 dark:bg-red-400'
+                  }`}
+                />
               </button>
             ))}
           </nav>
@@ -129,7 +140,7 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
               </AnimatePresence>
             </motion.button>
             */}
-            {/* CTA action */}
+            {/* CTA action - Keep the Join Medrae App link */}
             <motion.a
               href="https://medrae.vercel.app"
               target="_blank"
@@ -173,7 +184,7 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
                 </motion.div>
               </AnimatePresence>
             </motion.button>
-*/}
+            */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg transition-colors cursor-pointer
@@ -205,11 +216,18 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
                 <button
                   key={item.id}
                   onClick={() => handleScrollToSection(item.id)}
-                  className="block w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors cursor-pointer
-                    text-slate-700 hover:bg-red-50/50
-                    dark:text-slate-200 dark:hover:bg-slate-800/60"
+                  className={`block w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors cursor-pointer
+                    ${item.id === 'grouppay'
+                      ? 'text-emerald-600 hover:bg-emerald-50/50 dark:text-emerald-400 dark:hover:bg-slate-800/60'
+                      : 'text-slate-700 hover:bg-red-50/50 dark:text-slate-200 dark:hover:bg-slate-800/60'
+                    }`}
                 >
                   {item.label}
+                  {item.id === 'grouppay' && (
+                    <span className="ml-2 text-[10px] font-black uppercase tracking-wider text-emerald-500 bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 rounded-full">
+                      Save 50%
+                    </span>
+                  )}
                 </button>
               ))}
               <div className="pt-2">

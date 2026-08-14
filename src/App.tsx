@@ -9,10 +9,12 @@ import Footer from './components/Footer';
 import Privacy from './components/Privacy';
 import Terms from './components/Terms';
 import Curriculum from './components/Curriculum';
+import GroupPayLandingSection from './components/grouppay/GroupPayLandingSection'; // 🆕 Import GroupPay
 
 export default function App() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState<string>('home');
+
   useEffect(() => {
     const root = window.document.documentElement;
     if (isDarkMode) {
@@ -27,7 +29,6 @@ export default function App() {
   };
 
   const scrollToSection = (id: string) => {
-
     if (id === 'privacy' || id === 'terms') {
       setCurrentPage(id);
       window.scrollTo({
@@ -36,7 +37,6 @@ export default function App() {
       });
       return;
     }
-
 
     setCurrentPage('home');
 
@@ -78,6 +78,7 @@ export default function App() {
             <Quiz />
             <Features />
             <Curriculum scrollToSection={scrollToSection} />
+            <GroupPayLandingSection /> {/* 🆕 Added GroupPay section */}
             <CTA />
           </main>
         );
