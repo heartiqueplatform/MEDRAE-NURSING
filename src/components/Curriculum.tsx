@@ -70,12 +70,7 @@ const Curriculum: React.FC<CurriculumProps> = ({ scrollToSection }) => {
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center mb-12 md:mb-16">
-                    <div className="inline-flex items-center gap-2 bg-emerald-100 dark:bg-emerald-900/30 px-4 py-2 rounded-full border border-emerald-200 dark:border-emerald-800 mb-6">
-                        <Sparkles className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                        <span className="text-xs font-black uppercase tracking-widest text-emerald-700 dark:text-emerald-300">
-                            Complete KRCHN Curriculum
-                        </span>
-                    </div>
+
 
                     <h2 className="text-3xl md:text-5xl lg:text-6xl font-black tracking-tighter text-slate-900 dark:text-white mb-4">
                         Kenya's Most Complete{" "}

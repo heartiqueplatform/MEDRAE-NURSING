@@ -124,7 +124,7 @@ export const CircularGallery = React.forwardRef<HTMLDivElement, CircularGalleryP
                                     <div className="absolute bottom-0 left-0 w-full p-4 text-white">
                                         <h2 className="text-lg sm:text-xl font-bold">{item.common}</h2>
                                         <em className="text-xs sm:text-sm italic opacity-80">{item.binomial}</em>
-                                        <p className="text-[10px] sm:text-xs mt-2 opacity-70">📷 {item.photo.by}</p>
+                                        <p className="text-[10px] sm:text-xs mt-2 opacity-70"> {item.photo.by}</p>
                                     </div>
 
                                     {/* Hover effect */}

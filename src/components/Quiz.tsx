@@ -110,11 +110,8 @@ export default function Quiz() {
       <div className="max-w-7xl mx-auto px-0 sm:px-4 lg:px-6 relative z-10">
         {/* Section Header - Edge to edge on mobile */}
         <div className="px-4 sm:px-6 lg:px-8 text-center space-y-3 mb-6 sm:mb-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-red-50 dark:bg-red-500/10 text-red-700 dark:text-red-400 font-sans font-bold text-xs uppercase tracking-wider">
-            <Brain className="w-3.5 h-3.5" />
-            <span>Interactive Demo</span>
-          </div>
-          <h2 className="font-display font-extrabold text-2xl sm:text-3xl lg:text-4xl text-slate-900 dark:text-white">
+
+          <h2 className=" font-bold text-2xl sm:text-3xl lg:text-4xl text-slate-900 dark:text-white">
             <span className="text-red-600 dark:text-red-500">Medrae</span> Mini Nursing Challenge
           </h2>
           <p className="font-sans text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
@@ -144,10 +141,10 @@ export default function Quiz() {
                       {/* Progress Header - No borders */}
                       <div className="flex items-center justify-between gap-3 mb-4">
                         <div className="flex items-center gap-3">
-                          <span className="font-mono text-xs font-bold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1.5">
+                          <span className=" text-xs  text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1.5">
                             Q{currentIdx + 1}/{QUESTIONS.length}
                           </span>
-                          <span className={`font-mono text-[10px] font-bold px-2.5 py-1 ${currentQuestion.difficulty === 'Easy'
+                          <span className={` text-[10px]  px-2.5 py-1 ${currentQuestion.difficulty === 'Easy'
                             ? 'bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'
                             : currentQuestion.difficulty === 'Medium'
                               ? 'bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400'
@@ -174,11 +171,11 @@ export default function Quiz() {
 
                       {/* Question Topic & Text */}
                       <div className="space-y-3 mb-6">
-                        <div className="font-sans text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider flex items-center gap-2">
+                        <div className=" text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wider flex items-center gap-2">
                           <BookOpen className="w-3.5 h-3.5" />
                           TOPIC: {currentQuestion.topic}
                         </div>
-                        <h3 className="font-display font-extrabold text-lg sm:text-xl lg:text-2xl text-slate-800 dark:text-white leading-tight">
+                        <h3 className="text-lg sm:text-xl lg:text-2xl text-slate-800 dark:text-white">
                           {currentQuestion.question}
                         </h3>
                       </div>

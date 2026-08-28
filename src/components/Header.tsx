@@ -42,10 +42,10 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
 
   // 🆕 Updated navigation items with GroupPay
   const navItems = [
-    { label: 'About App', id: 'about' },
+    { label: 'About Medrae Nursing', id: 'about' },
     { label: 'Free Quiz', id: 'quiz' },
     { label: 'Features', id: 'features' },
-    { label: 'Curriculum', id: 'curriculum' },
+    { label: 'Nursing Curriculum', id: 'curriculum' },
     { label: 'GroupPay', id: 'grouppay' }, // 🆕 Added GroupPay
   ];
 
@@ -72,12 +72,12 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
             />
 
             <div>
-              <span className="font-display font-black text-xl tracking-tight transition-colors duration-200">
+              <span className=" text-xl tracking-tight transition-colors duration-200">
                 <span className="text-red-600 dark:text-red-500">Medrae</span>
                 <span className="text-slate-900 dark:text-white">Nursing</span>
               </span>
-              <div className="text-[9px] font-mono font-bold leading-none tracking-widest uppercase transition-colors duration-200">
-                <span className="text-slate-500 dark:text-slate-400">EdTech Platform</span>
+              <div className="text-[9px] font-mono leading-none  transition-colors duration-200">
+                <span className="text-slate-500 dark:text-slate-400">Made for nurses</span>
               </div>
             </div>
           </div>

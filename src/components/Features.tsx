@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { 
-  BookOpen, 
-  Award, 
-  ClipboardList, 
-  Stethoscope, 
-  FileText, 
-  TrendingUp, 
-  Compass, 
-  Users, 
+import {
+  BookOpen,
+  Award,
+  ClipboardList,
+  Stethoscope,
+  FileText,
+  TrendingUp,
+  Compass,
+  Users,
   ArrowUpRight,
   GraduationCap
 } from 'lucide-react';
@@ -72,13 +72,11 @@ export default function Features() {
       <div className="absolute left-10 bottom-1/4 w-80 h-80 bg-teal-500/5 dark:bg-teal-500/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Header Block and target audience detail */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16">
           <div className="lg:col-span-8 space-y-4">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-250 dark:border-emerald-500/20 text-emerald-800 dark:text-emerald-400 font-sans font-bold text-xs uppercase tracking-wider">
-              <span>All-In-One Ecosystem</span>
-            </div>
+
             <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-950 dark:text-white leading-tight">
               Powerful Core Tools Designed Specially <br className="hidden sm:inline" />
               for Every Phase of Your Nursing Journey
@@ -153,7 +151,7 @@ export default function Features() {
                 Connect on our premium Medrae application to unlock performance dashboards, smart memory intervals, real patient simulation charts, and customizable NCK quiz engines.
               </p>
             </div>
-            
+
             <a
               href="https://medrae.vercel.app"
               target="_blank"

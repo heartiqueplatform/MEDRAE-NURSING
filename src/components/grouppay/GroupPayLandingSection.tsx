@@ -341,15 +341,6 @@ const GroupPayLandingSection = () => {
                 {/* HEADER SECTION */}
                 <AnimatedSection direction="up">
                     <div className="text-center mb-12 md:mb-16 px-4 md:px-0">
-                        <div className="inline-flex items-center gap-2 bg-emerald-50 px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-emerald-100 mb-4 md:mb-6">
-                            <span className="relative flex h-2 w-2">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                            </span>
-                            <span className="text-[10px] md:text-xs font-black uppercase tracking-widest text-emerald-600">
-                                Study Together, Save Together
-                            </span>
-                        </div>
 
                         <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tighter text-slate-800">
                             Study <span className="text-emerald-600">Together</span>.<br className="block sm:hidden" />

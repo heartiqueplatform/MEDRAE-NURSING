@@ -35,9 +35,6 @@ export default function About({ scrollToSection }: AboutProps) {
 
           {/* Column 1: Core Description */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-250 dark:border-emerald-500/20 text-emerald-800 dark:text-emerald-400 font-sans font-bold text-xs uppercase tracking-wider">
-              <span>About <span className="text-red-600 dark:text-red-400">Medrae</span> Platform</span>
-            </div>
 
             <h2 className="font-display font-extrabold text-3xl sm:text-4xl text-slate-950 dark:text-white leading-tight">
               Bridging the Gap Between Nursing Theory & Live Patient Care

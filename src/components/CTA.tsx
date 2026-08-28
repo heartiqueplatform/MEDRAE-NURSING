@@ -70,10 +70,7 @@ export default function CTA() {
         <div className="py-12 sm:py-16 lg:py-20">
           <div className="max-w-3xl mx-auto text-center">
             {/* Visual badge */}
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/20 text-red-800 dark:text-red-400 font-sans font-bold text-xs uppercase tracking-wider mb-4">
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>🚀 Upgrade Your Clinical Success</span>
-            </div>
+
 
             {/* Typography headlines */}
             <div className="space-y-4">
@@ -121,59 +118,7 @@ export default function CTA() {
                 <span className="h-px w-8 bg-slate-300 dark:bg-slate-700" />
               </div>
 
-              {/* Email signup */}
-              <div className="w-full max-w-md bg-white dark:bg-white/5 p-5 rounded-2xl border border-slate-200 dark:border-white/10 text-left shadow-md">
-                <div className="flex items-center gap-1.5 text-xs font-semibold text-red-800 dark:text-red-400 mb-2">
-                  <Bookmark className="w-4 h-4 text-red-800 dark:text-red-400" />
-                  <span>Free High-Yield Nursing Exam Study Guide PDF</span>
-                </div>
 
-                <AnimatePresence mode="wait">
-                  {!isSubscribed ? (
-                    <motion.form
-                      key="form"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      onSubmit={handleSubscribe}
-                      className="flex flex-col sm:flex-row gap-2"
-                    >
-                      <input
-                        type="email"
-                        required
-                        placeholder="nursing_student@university.edu"
-                        value={emailInput}
-                        onChange={(e) => setEmailInput(e.target.value)}
-                        className="flex-1 px-4 py-3 bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-700/60 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500/50 text-sans text-sm text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500"
-                      />
-                      <button
-                        type="submit"
-                        disabled={isLoading}
-                        className="px-5 py-3 bg-gradient-to-r from-red-600 to-blue-600 hover:from-red-500 hover:to-blue-500 text-white font-sans font-bold text-xs uppercase tracking-wider rounded-xl transition-colors cursor-pointer text-center whitespace-nowrap flex items-center justify-center"
-                      >
-                        {isLoading ? 'Delivering...' : 'Get Study Guide'}
-                      </button>
-                    </motion.form>
-                  ) : (
-                    <motion.div
-                      key="success"
-                      initial={{ opacity: 0, scale: 0.95 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      className="flex items-center gap-3 p-3 bg-red-50 dark:bg-red-500/10 border border-red-500/20 rounded-xl text-red-800 dark:text-red-300 text-sm"
-                    >
-                      <CheckCircle2 className="w-5 h-5 text-red-600 dark:text-red-400 shrink-0" />
-                      <div>
-                        <div className="font-bold underline">Check your inbox!</div>
-                        <p className="text-xs text-slate-600 dark:text-slate-300">We just emailed you the <strong>High-Yield NCK & Clinical Care Study Guide PDF</strong> pack.</p>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-
-                <div className="text-[10px] text-slate-500 dark:text-slate-400 mt-2.5 text-center">
-                  Zero spam. Unsubscribe anytime. High-quality study packages of 50+ key questions.
-                </div>
-              </div>
             </div>
           </div>
         </div>
