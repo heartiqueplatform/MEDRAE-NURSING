@@ -161,7 +161,7 @@ const GroupPayLandingSection = () => {
         {
             icon: Wallet,
             title: "Save on Premium Access",
-            description: "Instead of paying KSh 199 individually, contribute just KSh 99 per member when you join a group of 10+ students.",
+            description: "Instead of paying KSh 399 individually, contribute just KSh 299 per member when you join a group of 10+ students.",
             color: "text-emerald-600",
             bg: "bg-emerald-50",
             highlight: true,
@@ -217,7 +217,7 @@ const GroupPayLandingSection = () => {
     const pricingComparison = [
         {
             plan: "Individual Premium",
-            price: "KSh 199",
+            price: "KSh 399",
             features: [
                 "Full premium access",
                 "Clinical assessments",
@@ -231,7 +231,7 @@ const GroupPayLandingSection = () => {
         },
         {
             plan: "GroupPay (10+ Members)",
-            price: "KSh 99",
+            price: "KSh 299",
             features: [
                 "Full premium access",
                 "Clinical assessments",
@@ -389,7 +389,7 @@ const GroupPayLandingSection = () => {
                                     <span className="text-emerald-600">Learn More.</span>
                                 </h3>
                                 <p className="text-slate-600 text-sm md:text-base max-w-md leading-relaxed">
-                                    Join a group of 10+ nursing students and pay just <span className="font-bold text-emerald-600">KSh 99</span> per member instead of <span className="line-through text-slate-400">KSh 199</span>.
+                                    Join a group of 10+ nursing students and pay just <span className="font-bold text-emerald-600">KSh 299</span> per member instead of <span className="line-through text-slate-400">KSh 399</span>.
                                     That's <span className="font-bold text-emerald-600">KSh 100 saved</span> every month!
                                 </p>
                                 {/* ✅ REMOVED: "Join Medrae Nursing" button */}
@@ -402,8 +402,8 @@ const GroupPayLandingSection = () => {
                                         </div>
                                         <div>
                                             <p className="text-xs font-medium text-slate-500">Per Member</p>
-                                            <p className="text-3xl font-black text-emerald-600">KSh 99</p>
-                                            <p className="text-xs text-slate-400 line-through">Was KSh 199</p>
+                                            <p className="text-3xl font-black text-emerald-600">KSh 299</p>
+                                            <p className="text-xs text-slate-400 line-through">Was KSh 399</p>
                                         </div>
                                     </div>
                                     <div className="mt-4 pt-4 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-600">
