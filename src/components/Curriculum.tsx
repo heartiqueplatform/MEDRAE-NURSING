@@ -77,7 +77,7 @@ const Curriculum: React.FC<CurriculumProps> = ({ scrollToSection }) => {
                         <span className="text-emerald-600 dark:text-emerald-400 italic">Nursing Curriculum</span>
                     </h2>
                     <p className="text-base md:text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto font-medium leading-relaxed">
-                        Study the entire Kenya Registered Community Health Nursing (KRCHN) syllabus organized by Year, Semester, Module, Unit, and Topic. Following the official Nursing Council of Kenya (NCK) syllabus.
+                        Study the entire DCHN (formerly KRCHN) syllabus — plus content mapped for BSN, KRN and other nursing cadres — organized by Year, Semester, Module, Unit, and Topic. Following the official Nursing Council of Kenya (NCK) syllabus.
                     </p>
                 </div>
 
@@ -178,7 +178,7 @@ const Curriculum: React.FC<CurriculumProps> = ({ scrollToSection }) => {
                         <ChevronRight className="w-5 h-5" />
                     </a>
                     <p className="text-xs text-slate-400 dark:text-slate-500 mt-3 font-medium">
-                        Follows the official Nursing Council of Kenya (NCK) KRCHN syllabus
+                        Follows the official Nursing Council of Kenya (NCK) DCHN (formerly KRCHN) syllabus — useful for BSN, KRN and other nursing cadres
                     </p>
                 </div>
             </div>

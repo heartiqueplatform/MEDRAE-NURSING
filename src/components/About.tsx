@@ -11,7 +11,7 @@ export default function About({ scrollToSection }: AboutProps) {
     {
       icon: <Award className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />,
       title: 'Targeted Exam & Licensure Prep',
-      description: 'Specially structured practice modules formatted to build high-yield analytical skills for internal nursing school tests as well as official NCK Licensing board examinations.',
+      description: 'Specially structured practice modules formatted to build high-yield analytical skills for internal nursing school tests as well as official NCK Licensing board examinations — for DCHN (formerly KRCHN), BSN, KRN and all nursing cadres.',
     },
     {
       icon: <BookOpen className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />,
@@ -41,7 +41,7 @@ export default function About({ scrollToSection }: AboutProps) {
             </h2>
 
             <p className="font-sans text-slate-600 dark:text-slate-300 leading-relaxed text-base pt-2">
-              At Medrae Nursing, we believe nursing education should be active, intuitive, and accessible. Traditional textbooks overload you with hundreds of dense pages. Medrae refines clinical information into interactive, high-yield learning bites.
+              At Medrae Nursing, we believe nursing education should be active, intuitive, and accessible. Traditional textbooks overload you with hundreds of dense pages. Medrae refines clinical information into interactive, high-yield learning bites — for nursing students across DCHN, BSN, KRN and all cadres.
             </p>
 
             <p className="font-sans text-slate-600 dark:text-slate-300 leading-relaxed text-base">

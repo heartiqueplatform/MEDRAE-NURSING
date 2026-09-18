@@ -24,7 +24,7 @@ export default function Features() {
     {
       icon: <Award className="w-6 h-6 text-teal-600 dark:text-teal-400" />,
       title: 'NCK Examination Preparation',
-      description: 'Comprehensive curriculum coverage aligning with national board specifications to ensure first-attempt pass rates.',
+      description: 'Comprehensive curriculum coverage for DCHN (formerly KRCHN), BSN, KRN and all nursing cadres — aligned with national board specifications to ensure first-attempt pass rates.',
       tag: 'Licensure'
     },
     {
@@ -84,7 +84,7 @@ export default function Features() {
           </div>
           <div className="lg:col-span-4 lg:text-right">
             <p className="font-sans text-sm sm:text-base text-slate-500 dark:text-slate-400">
-              No generic general-ed material. Everything in Medrae is built specifically for student nurses, interns, practicing nurses, and nursing graduates preparing for licensure exams.
+              No generic general-ed material. Everything in Medrae is built specifically for student nurses, interns, practicing nurses, and nursing graduates preparing for licensure exams — across DCHN, BSN, KRN and all nursing cadres.
             </p>
           </div>
         </div>
@@ -148,7 +148,7 @@ export default function Features() {
                 Unlock Premium Reference Notes & Performance Metrics
               </h3>
               <p className="font-sans text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                Connect on our premium Medrae application to unlock performance dashboards, smart memory intervals, real patient simulation charts, and customizable NCK quiz engines.
+                Connect on our premium Medrae application to unlock performance dashboards, smart memory intervals, real patient simulation charts, and customizable NCK quiz engines for DCHN, BSN, KRN and all nursing cadres.
               </p>
             </div>
 

@@ -7,7 +7,6 @@ import {
     ClipboardCheck,
     Trophy,
     Home,
-    ArrowLeft,
     Mail,
     Phone,
     ShieldCheck,
@@ -69,17 +68,6 @@ export default function SeoFooter() {
     return (
         <footer className="mt-16 w-full border-t border-slate-100 bg-white">
             <div className="mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-12">
-                {/* Back to home link */}
-                <div className="mb-8 flex justify-center">
-                    <Link
-                        to="/"
-                        className="inline-flex items-center gap-2 rounded-lg bg-slate-50 px-4 py-2 text-xs font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-300 sm:text-sm"
-                    >
-                        <ArrowLeft className="h-4 w-4" />
-                        Back to Home
-                    </Link>
-                </div>
-
                 {/* Brand row */}
                 <div className="flex flex-col items-center text-center">
                     <img

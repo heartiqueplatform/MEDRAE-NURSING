@@ -24,7 +24,7 @@ const galleryItems: GalleryItem[] = [
     binomial: 'Exam Ready',
     photo: {
       url: '/images/nursing-2.jpg',
-      text: 'NCK Exam Preparation',
+      text: 'NCK & DCHN Exam Preparation',
       pos: 'center',
       by: 'Medrae Nursing '
     }
@@ -135,7 +135,7 @@ export default function Hero({ scrollToSection }: HeroProps) {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-slate-950 dark:text-white leading-tight tracking-tight"
             >
-              Pass Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-blue-600 to-violet-600 dark:from-red-400 dark:via-blue-400 dark:to-violet-400">NCK & FQE</span> Exams with Confidence
+              Pass Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 via-blue-600 to-violet-600 dark:from-red-400 dark:via-blue-400 dark:to-violet-400">NCK, FQE & Nursing</span> Exams with Confidence
             </motion.h1>
 
             {/* Description */}
@@ -145,6 +145,7 @@ export default function Hero({ scrollToSection }: HeroProps) {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="font-sans text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed font-normal"
             >
+              Built for DCHN (formerly KRCHN), BSN, KRN and all nursing cadres.
               All nursing units and notes in one app. Curated educational videos without distractions.
               DigiProctor style timed practice to beat exam anxiety. Survival hub, hospital placements,
               and Nursmartt secondhand marketplace. Premium access from just 199 KSh for 2 months.
@@ -159,7 +160,7 @@ export default function Hero({ scrollToSection }: HeroProps) {
             >
               <div className="flex items-center gap-1.5 bg-slate-100/80 dark:bg-slate-900/60 p-1 px-2.5 rounded-full border border-slate-200/55 dark:border-slate-800/80">
                 <CheckCircle className="w-4 h-4 text-red-500" />
-                <span className="font-bold text-slate-700 dark:text-slate-300">NCK Licensure Prep</span>
+                <span className="font-bold text-slate-700 dark:text-slate-300">NCK / DCHN Licensure Prep</span>
               </div>
               <div className="flex items-center gap-1.5 bg-slate-100/80 dark:bg-slate-900/60 p-1 px-2.5 rounded-full border border-slate-200/55 dark:border-slate-800/80">
                 <CheckCircle className="w-4 h-4 text-blue-500" />

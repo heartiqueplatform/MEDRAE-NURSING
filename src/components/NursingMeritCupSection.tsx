@@ -135,10 +135,7 @@ const NursingMeritCupSection = () => {
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="text-center mb-10 md:mb-16 px-4 md:px-0">
-                    <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest mb-3 md:mb-4">
-                        <Sparkles className="w-3 h-3 md:w-3.5 md:h-3.5" />
-                        New on Medrae
-                    </div>
+
                     <h2 className="text-2xl md:text-4xl lg:text-5xl font-black tracking-tighter text-slate-900 mb-3 md:mb-4">
                         Medrae National Nursing{" "}
                         <span className="text-blue-600 italic">Merit Cup</span>
