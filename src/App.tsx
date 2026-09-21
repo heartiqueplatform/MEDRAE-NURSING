@@ -24,6 +24,7 @@ import KRCHNRevisionPage from "./components/seo/KRCHNRevisionPage";
 import NCKExamPreparationPage from "./components/seo/NCKExamPreparationPage";
 import NursingRevisionKenyaPage from "./components/seo/NursingRevisionKenyaPage";
 import MedraeNursingMeritCupPage from "./components/seo/MedraeNursingMeritCupPage";
+import PodcastSection from "./components/PodcastSection";
 
 // ============================================================
 // HOME PAGE (your existing landing page content)
@@ -88,6 +89,7 @@ function HomePage() {
             <About scrollToSection={scrollToSection} />
             <Quiz />
             <Features />
+            <PodcastSection />
             <Curriculum scrollToSection={scrollToSection} />
 
             {/* 🆕 Merit Cup section */}

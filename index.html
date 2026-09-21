@@ -392,7 +392,100 @@
   <!-- ============================================ -->
   <!-- SCHEMA.ORG / JSON-LD - ALL FEATURES + EXTENDED -->
   <!-- ============================================ -->
+  <!-- ============================================ -->
+  <!-- 🎧 FEATURE 10: Medrae Podcast Network -->
+  <!-- ============================================ -->
+  <meta name="podcasts:total_shows" content="6+ curated nursing shows" />
+  <meta name="podcasts:total_episodes" content="100+ episodes and growing" />
+  <meta name="podcasts:categories"
+    content="Clinical insights, exam-focused revision (NCK & FQEs), emotional support, nursing comedy, new nurse diaries, global pathways" />
+  <meta name="podcasts:curated" content="Hand-picked nursing podcasts — verified, zero fluff, updated weekly" />
+  <meta name="podcasts:free" content="Free with every Medrae account — no extra subscription" />
+  <meta name="podcasts:audio"
+    content="Real voices from the ward, exam breakdowns, honest talk on burnout, comedy only nurses understand" />
+  <meta name="podcasts:access" content="Available inside the Medrae app for all cadres (DCHN, BSN, KRN)" />
 
+  <!-- Feature 10 keyword variant -->
+  <meta name="keywords_podcasts"
+    content="nursing podcasts Kenya, nursing podcast network, NCK revision podcast, nursing exam podcast, nursing emotional support podcast, nursing comedy podcast, clinical insights podcast, nursing student audio, DCHN podcast, BSN podcast, KRN podcast" />
+
+  <!-- Feature-level meta tag (parallel to your existing feature:* pattern) -->
+  <meta name="feature:podcast_network"
+    content="Medrae Podcast Network — hand-picked nursing podcasts covering clinical insights, exam revision, emotional support, and nursing comedy. Free with every account." />
+
+  <!-- Social proof for podcasts -->
+  <meta name="social:podcasts" content="2,231+ nursing students listening to curated nursing shows on Medrae" />
+
+  <!-- ============================================ -->
+  <!-- FEATURE 10: Podcast Network Schema (JSON-LD) -->
+  <!-- ============================================ -->
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "PodcastSeries",
+        "name": "Medrae Podcast Network",
+        "alternateName": "Medrae Nursing Podcasts",
+        "description": "Hand-picked nursing podcasts inside Medrae — real voices from the ward, exam-focused NCK & FQE breakdowns, honest talk on burnout, and comedy that only nurses understand. Free with every Medrae account. Available for all nursing cadres (DCHN, BSN, KRN).",
+        "url": "https://medrae.com/#podcasts",
+        "inLanguage": "en-KE",
+        "publisher": {
+          "@type": "EducationalOrganization",
+          "name": "Medrae Nursing",
+          "url": "https://medrae.com/",
+          "logo": "https://medrae.com/icon-512.png"
+        },
+        "audience": {
+          "@type": "EducationalAudience",
+          "educationalRole": "nursing student"
+        },
+        "genre": [
+          "Nursing Education",
+          "Clinical Insights",
+          "Exam Preparation",
+          "Mental Wellness",
+          "Comedy"
+        ],
+        "webFeed": "https://medrae.com/#podcasts",
+        "hasPart": [
+          {
+            "@type": "PodcastEpisode",
+            "name": "Clinical Insights",
+            "description": "Real cases and real decisions from practising nurses on the ward."
+          },
+          {
+            "@type": "PodcastEpisode",
+            "name": "Night Shift Stories",
+            "description": "Honest talk on burnout, fear, and resilience in nursing."
+          },
+          {
+            "@type": "PodcastEpisode",
+            "name": "Exam Room",
+            "description": "NCK & FQEs decoded — evidence-based revision breakdowns."
+          },
+          {
+            "@type": "PodcastEpisode",
+            "name": "Nursing Laughs",
+            "description": "Comedy that only nurses understand."
+          },
+          {
+            "@type": "PodcastEpisode",
+            "name": "New Nurse Diaries",
+            "description": "From student to staff — real transition stories."
+          },
+          {
+            "@type": "PodcastEpisode",
+            "name": "Global Pathways",
+            "description": "NCLEX and international nursing licensing pathways."
+          }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "KES",
+          "description": "Free with every Medrae account — no extra subscription required."
+        }
+      }
+    </script>
   <!-- 🏆 FEATURE 1: 6k+ NCK Questions by Unit & Condition Schema -->
   <script type="application/ld+json">
     {
@@ -775,200 +868,249 @@
 
 <body style="margin:0; height:100%;">
   <!-- 🟢 1. THE PERMANENT BRANDED LOADER (STAYS UNTIL WE KILL IT) -->
-  <div id="initial-loader"
-    style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #ffffff; z-index: 99999; transition: opacity 0.5s ease-out; overflow: hidden; font-family: system-ui, -apple-system, sans-serif;">
-
+  <div id="initial-loader" role="status" aria-label="Loading Medrae Nursing">
     <style>
-      /* Gooey Container Logic */
-      .goo-container {
-        filter: url('#goo');
+      #initial-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 24px;
+        background-color: var(--bg-color, #ffffff);
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        opacity: 1;
+        transition: opacity 200ms ease-out;
+        will-change: opacity;
+        contain: layout style paint;
+        box-sizing: border-box;
+        overflow: hidden;
+      }
+
+      #initial-loader.is-hiding {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      /* Dot-grid */
+      #initial-loader::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(circle, var(--pattern-dot, rgba(255, 31, 31, 0.14)) 1.2px, transparent 1.4px);
+        background-size: 18px 18px;
+        opacity: 0.9;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .dark #initial-loader::before {
+        background-image: radial-gradient(circle, rgba(255, 31, 31, 0.22) 1.2px, transparent 1.4px);
+      }
+
+      /* Radial fade */
+      #initial-loader::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 50% 50%, var(--screen-fade, rgba(255, 255, 255, 0.85)) 0%, transparent 70%);
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .dark #initial-loader::after {
+        background: radial-gradient(circle at 50% 50%, rgba(13, 17, 23, 0.85) 0%, transparent 70%);
+      }
+
+      /* ---------- Logo wrapper with orbit rings ---------- */
+      #initial-loader .splash-logo-wrap {
         position: relative;
+        z-index: 2;
         width: 120px;
         height: 120px;
         display: flex;
         align-items: center;
         justify-content: center;
+        animation: medrae-fade-up 500ms 100ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
       }
 
-      .dot {
+      /* Soft red halo behind logo — breathing */
+      #initial-loader .splash-halo {
         position: absolute;
-        width: 35px;
-        height: 35px;
+        inset: -10px;
         border-radius: 50%;
-        animation-iteration-count: infinite;
-        animation-duration: 3s;
-        animation-timing-function: ease-in-out;
+        background: radial-gradient(circle, rgba(255, 31, 31, 0.20) 0%, rgba(255, 31, 31, 0.06) 45%, transparent 70%);
+        animation: medrae-halo-pulse 2.4s ease-in-out infinite;
+        will-change: transform, opacity;
+        pointer-events: none;
       }
 
-      /* Individual Colors for each dot - Wellness Themed */
-      .dot-1 {
-        background-color: #ef4444;
-        /* Medrae Red - Passion & Care */
-        animation-name: dot-1-move;
+      /* Primary orbit ring */
+      #initial-loader .splash-orbit {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        border-top-color: rgba(255, 31, 31, 0.85);
+        border-right-color: rgba(255, 31, 31, 0.20);
+        animation: medrae-orbit 1.6s linear infinite;
+        will-change: transform;
+        pointer-events: none;
       }
 
-      .dot-2 {
-        background-color: #3b82f6;
-        /* Bright Blue - Trust & Calm */
-        animation-name: dot-2-move;
+      /* Secondary orbit ring */
+      #initial-loader .splash-orbit.secondary {
+        inset: -8px;
+        border-top-color: rgba(255, 31, 31, 0.25);
+        border-right-color: transparent;
+        border-left-color: rgba(255, 31, 31, 0.55);
+        animation: medrae-orbit-reverse 3.2s linear infinite;
       }
 
-      .dot-3 {
-        background-color: #8b5cf6;
-        /* Violet - Wisdom & Wellness */
-        animation-name: dot-3-move;
+      #initial-loader .splash-logo {
+        position: relative;
+        z-index: 2;
+        width: 76px;
+        height: 76px;
+        object-fit: contain;
+        display: block;
       }
 
-      @keyframes dot-1-move {
+      @keyframes medrae-halo-pulse {
 
         0%,
         100% {
-          transform: translate(0, 0) scale(1);
-        }
-
-        33% {
-          transform: translate(-40px, -20px) scale(1.2);
-        }
-
-        66% {
-          transform: translate(30px, 40px) scale(0.8);
-        }
-      }
-
-      @keyframes dot-2-move {
-
-        0%,
-        100% {
-          transform: translate(0, 0) scale(1);
-        }
-
-        33% {
-          transform: translate(40px, -20px) scale(0.9);
-        }
-
-        66% {
-          transform: translate(-30px, 40px) scale(1.1);
-        }
-      }
-
-      @keyframes dot-3-move {
-
-        0%,
-        100% {
-          transform: translate(0, 0) scale(1.2);
-        }
-
-        33% {
-          transform: translate(0px, 50px) scale(0.8);
-        }
-
-        66% {
-          transform: translate(0px, -50px) scale(1);
-        }
-      }
-
-      .animate-pulse-slow {
-        animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-      }
-
-      @keyframes pulse-slow {
-
-        0%,
-        100% {
-          opacity: 1;
+          transform: scale(1);
+          opacity: 0.9;
         }
 
         50% {
-          opacity: .4;
+          transform: scale(1.15);
+          opacity: 0.5;
         }
       }
 
-      /* Heartbeat animation for wellness focus */
-      .heartbeat {
-        animation: heartbeat 1.5s ease-in-out infinite;
+      @keyframes medrae-orbit {
+        to {
+          transform: rotate(360deg);
+        }
       }
 
-      @keyframes heartbeat {
+      @keyframes medrae-orbit-reverse {
+        to {
+          transform: rotate(-360deg);
+        }
+      }
+
+      /* ---------- Wordmark — quiet, readable pulse ---------- */
+      /* ---------- Wordmark — static, readable, shiny sword slash ---------- */
+      #initial-loader .splash-wordmark {
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+        /* clips the slash to the text box */
+        display: inline-block;
+        font-weight: 800;
+        font-size: 26px;
+        letter-spacing: -0.6px;
+        line-height: 1;
+        animation: medrae-fade-up 500ms 250ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+        will-change: transform, opacity;
+      }
+
+      /* The sword slash — sweeps across the wordmark, word itself never moves */
+      #initial-loader .splash-wordmark::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -60%;
+        width: 40%;
+        height: 200%;
+        background: linear-gradient(115deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0) 30%,
+            rgba(255, 255, 255, 0.85) 50%,
+            rgba(255, 255, 255, 0) 70%,
+            transparent 100%);
+        transform: rotate(8deg) translateX(-150%);
+        animation: medrae-sword-slash 3.5s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        pointer-events: none;
+        mix-blend-mode: screen;
+        filter: blur(0.5px);
+        will-change: transform;
+      }
+
+      .dark #initial-loader .splash-wordmark::after {
+        background: linear-gradient(115deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0) 30%,
+            rgba(255, 255, 255, 0.55) 50%,
+            rgba(255, 255, 255, 0) 70%,
+            transparent 100%);
+      }
+
+      #initial-loader .splash-wordmark .brand {
+        color: #FF1F1F;
+      }
+
+      #initial-loader .splash-wordmark .suffix {
+        color: #111111;
+        margin-left: 4px;
+      }
+
+      .dark #initial-loader .splash-wordmark .suffix {
+        color: #ffffff;
+      }
+
+      @keyframes medrae-fade-up {
+        from {
+          transform: translateY(6px);
+          opacity: 0;
+        }
+
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes medrae-sword-slash {
         0% {
-          transform: scale(1);
+          transform: rotate(8deg) translateX(-180%);
         }
 
-        14% {
-          transform: scale(1.1);
+        /* off-screen left */
+        40% {
+          transform: rotate(8deg) translateX(320%);
         }
 
-        28% {
-          transform: scale(1);
+        /* reached right edge */
+        60% {
+          transform: rotate(8deg) translateX(320%);
         }
 
-        42% {
-          transform: scale(1.05);
-        }
-
-        70% {
-          transform: scale(1);
-        }
-
+        /* hold briefly */
         100% {
-          transform: scale(1);
-        }
-      }
-
-      /* NEW: Algorithm badge pulse for loader */
-      .algorithm-pulse {
-        animation: algorithmPulse 2s ease-in-out infinite;
-      }
-
-      @keyframes algorithmPulse {
-
-        0%,
-        100% {
-          transform: scale(1);
-          opacity: 0.6;
-        }
-
-        50% {
-          transform: scale(1.05);
-          opacity: 1;
+          transform: rotate(8deg) translateX(-180%);
         }
       }
     </style>
 
-    <!-- Gooey Loader Graphic -->
-    <div style="position: relative;">
-      <div class="goo-container">
-        <div class="dot dot-1"></div>
-        <div class="dot dot-2"></div>
-        <div class="dot dot-3"></div>
-      </div>
-
-      <!-- The SVG Filter -->
-      <svg xmlns="http://www.w3.org/2000/svg" style="position: absolute; width: 0; height: 0;">
-        <defs>
-          <filter id="goo">
-            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7" result="goo" />
-            <feBlend in="SourceGraphic" in2="goo" />
-          </filter>
-        </defs>
-      </svg>
+    <!-- Logo + orbit spinner -->
+    <div class="splash-logo-wrap">
+      <div class="splash-halo" aria-hidden="true"></div>
+      <div class="splash-orbit" aria-hidden="true"></div>
+      <div class="splash-orbit secondary" aria-hidden="true"></div>
+      <img class="splash-logo" src="/pwa-512x512.png" alt="" width="76" height="76" decoding="async"
+        fetchpriority="high" />
     </div>
-    <!-- Branded Text Label - Landing Page Version -->
-    <div style="text-align: center; margin-top: 40px;">
-      <div
-        style="font-weight: 900; font-size: 38px; letter-spacing: -2px; text-transform: uppercase; margin-bottom: 5px;">
-        <span style="color: #ef4444;">MEDRAE</span> <span style="color: #000000;">NURSING</span>
-      </div>
 
-      <p class="animate-pulse-slow"
-        style="margin: 8px 0 0 0; font-size: 14px; color: #64748b; font-weight: 500; letter-spacing: 0.5px;">
-        Gathering all info about Medrae Nursing...
-      </p>
-
-      <div
-        style="margin-top: 16px; display: flex; align-items: center; justify-content: center; gap: 8px; opacity: 0.7;">
-        <span style="font-size: 12px; color: #94a3b8;">Kenya's #1 Nursing Exam Prep Platform</span>
-      </div>
+    <!-- Wordmark with quiet pulse -->
+    <div class="splash-wordmark">
+      <span class="brand">MEDRAE</span><span class="suffix">NURSING</span>
     </div>
   </div>
   <div id="root" style="height:100%;"></div>

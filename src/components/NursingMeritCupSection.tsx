@@ -304,10 +304,7 @@ const NursingMeritCupSection = () => {
                 <div className="mt-10 md:mt-12 mx-3 md:mx-0">
                     <div className="bg-white md:rounded-2xl p-6 md:p-10 shadow-sm border border-slate-100">
                         <div className="max-w-2xl mx-auto text-center">
-                            <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-800 px-3 py-1 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest mb-4 md:mb-5">
-                                <Users className="w-3 h-3 md:w-3.5 md:h-3.5" />
-                                Join Medrae to Participate
-                            </div>
+
                             <h3 className="text-xl md:text-3xl font-black text-slate-900 mb-3 md:mb-4">
                                 Ready to Be Part of the Merit Cup?
                             </h3>

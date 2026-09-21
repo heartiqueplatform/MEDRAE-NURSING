@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, Sun, Moon, Sparkles, BookOpen, ChevronDown } from 'lucide-react';
+import { Menu, X, Sun, Moon, Sparkles, BookOpen, ChevronDown, Headphones, MoreHorizontal } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface HeaderProps {
@@ -13,6 +13,7 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [seoOpen, setSeoOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,12 +23,11 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Scroll to section within the home page
   const handleScrollToSection = (id: string) => {
     setIsOpen(false);
     setSeoOpen(false);
+    setMoreOpen(false);
 
-    // If user is on an SEO page, go home first
     if (window.location.pathname !== '/') {
       window.location.href = `/#${id}`;
       return;
@@ -48,17 +48,22 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
     }, 150);
   };
 
-  // Home page section navigation
-  const navItems = [
-    { label: 'About Medrae Nursing', id: 'about' },
+  // ── Primary tabs — only the most important, always visible ──
+  const primaryNavItems = [
+    { label: 'About', id: 'about' },
     { label: 'Free Quiz', id: 'quiz' },
     { label: 'Features', id: 'features' },
-    { label: 'Nursing Curriculum', id: 'curriculum' },
-    { label: 'Merit Cup', id: 'merit-cup' },
-    { label: 'GroupPay', id: 'grouppay' },
+    { label: 'Podcasts', id: 'podcasts', highlight: true },
   ];
 
-  // SEO pages — navigation to separate routes
+  // ── "More" dropdown — collects every other section ──
+  const moreNavItems = [
+    { label: 'Nursing Curriculum', id: 'curriculum' },
+    { label: 'Merit Cup', id: 'merit-cup' },
+    { label: 'GroupPay', id: 'grouppay', badge: 'Save 50%' },
+  ];
+
+  // ── SEO pages — separate route dropdown ──
   const seoPages = [
     { label: 'Nursing Revision in Kenya', to: '/nursing-revision-kenya' },
     { label: 'NCK Exam Revision', to: '/nck-exam-revision' },
@@ -68,6 +73,9 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
     { label: 'KRCHN Revision', to: '/krchn-revision' },
     { label: 'Medrae Merit Cup', to: '/medrae-nursing-merit-cup' },
   ];
+
+  // ── Mobile-only: everything in one flat list ──
+  const allNavItems = [...primaryNavItems, ...moreNavItems];
 
   return (
     <header
@@ -100,32 +108,75 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
             </div>
           </div>
 
-          {/* Desktop Navigation */}
+          {/* ══════ Desktop Navigation ══════ */}
           <nav className="hidden lg:flex items-center gap-6">
-            {navItems.map((item) => (
+            {primaryNavItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => handleScrollToSection(item.id)}
                 className={`font-sans font-semibold text-sm transition-colors duration-200 cursor-pointer relative py-1 group
-                  ${item.id === 'grouppay'
-                    ? 'text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300'
+                  ${item.highlight
+                    ? 'text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300'
                     : 'text-slate-600 hover:text-red-600 dark:text-slate-300 dark:hover:text-red-400'
                   }`}
               >
                 {item.label}
-                {item.id === 'grouppay' && (
-                  <span className="absolute -top-1 -right-2 w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                {item.highlight && (
+                  <span className="absolute -top-1 -right-2 w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
                 )}
                 <span className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-200 group-hover:w-full
-                  ${item.id === 'grouppay'
-                    ? 'bg-emerald-500 dark:bg-emerald-400'
-                    : 'bg-red-600 dark:bg-red-400'
-                  }`}
+                  ${item.highlight ? 'bg-red-500 dark:bg-red-400' : 'bg-red-600 dark:bg-red-400'}`}
                 />
               </button>
             ))}
 
-            {/* SEO Dropdown */}
+            {/* ── More dropdown (collects all secondary sections) ── */}
+            <div
+              className="relative"
+              onMouseEnter={() => setMoreOpen(true)}
+              onMouseLeave={() => setMoreOpen(false)}
+            >
+              <button
+                className={`font-sans font-semibold text-sm transition-colors duration-200 cursor-pointer relative py-1 group flex items-center gap-1
+                  ${moreOpen
+                    ? 'text-red-600 dark:text-red-400'
+                    : 'text-slate-600 hover:text-red-600 dark:text-slate-300 dark:hover:text-red-400'
+                  }`}
+              >
+                <MoreHorizontal className="w-4 h-4" />
+                More
+                <ChevronDown className={`w-3 h-3 transition-transform ${moreOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              <AnimatePresence>
+                {moreOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full right-0 mt-2 w-64 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 shadow-xl overflow-hidden"
+                  >
+                    {moreNavItems.map((item) => (
+                      <button
+                        key={item.id}
+                        onClick={() => handleScrollToSection(item.id)}
+                        className="flex items-center justify-between w-full text-left px-4 py-2.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-red-50/50 dark:hover:bg-slate-800/60 transition-colors"
+                      >
+                        <span>{item.label}</span>
+                        {item.badge && (
+                          <span className="text-[10px] font-black uppercase tracking-wider text-emerald-500 bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 rounded-full">
+                            {item.badge}
+                          </span>
+                        )}
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* ── Revision Guides dropdown ── */}
             <div
               className="relative"
               onMouseEnter={() => setSeoOpen(true)}
@@ -136,7 +187,7 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
                   text-slate-600 hover:text-red-600 dark:text-slate-300 dark:hover:text-red-400"
               >
                 <BookOpen className="w-4 h-4" />
-                Revision Guides
+                Guides
                 <ChevronDown className={`w-3 h-3 transition-transform ${seoOpen ? 'rotate-180' : ''}`} />
               </button>
 
@@ -147,7 +198,7 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute top-full left-0 mt-2 w-72 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 shadow-xl overflow-hidden"
+                    className="absolute top-full right-0 mt-2 w-72 rounded-xl bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800 shadow-xl overflow-hidden"
                   >
                     {seoPages.map((page) => (
                       <Link
@@ -183,7 +234,7 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
             </motion.a>
           </div>
 
-          {/* Mobile Right Element: Hamburger */}
+          {/* Mobile Hamburger */}
           <div className="flex items-center gap-2 lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -199,7 +250,7 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
         </div>
       </div>
 
-      {/* Mobile Menu Drawer */}
+      {/* ══════ Mobile Menu Drawer ══════ */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -213,27 +264,30 @@ export default function Header({ isDarkMode, toggleDarkMode, scrollToSection }: 
           >
             <div className="px-4 pt-3 pb-6 space-y-2 max-h-[calc(100vh-80px)] overflow-y-auto">
 
-              {/* Section nav */}
-              {navItems.map((item) => (
+              {/* All sections in one flat list */}
+              {allNavItems.map((item: any) => (
                 <button
                   key={item.id}
                   onClick={() => handleScrollToSection(item.id)}
-                  className={`block w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors cursor-pointer
-                    ${item.id === 'grouppay'
-                      ? 'text-emerald-600 hover:bg-emerald-50/50 dark:text-emerald-400 dark:hover:bg-slate-800/60'
+                  className={`flex items-center justify-between w-full text-left px-4 py-2.5 rounded-xl font-semibold transition-colors cursor-pointer
+                    ${item.highlight
+                      ? 'text-red-600 hover:bg-red-50/50 dark:text-red-400 dark:hover:bg-slate-800/60'
                       : 'text-slate-700 hover:bg-red-50/50 dark:text-slate-200 dark:hover:bg-slate-800/60'
                     }`}
                 >
-                  {item.label}
-                  {item.id === 'grouppay' && (
-                    <span className="ml-2 text-[10px] font-black uppercase tracking-wider text-emerald-500 bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 rounded-full">
-                      Save 50%
+                  <span className="flex items-center gap-2">
+                    {item.id === 'podcasts' && <Headphones className="w-4 h-4" />}
+                    {item.label}
+                  </span>
+                  {item.badge && (
+                    <span className="text-[10px] font-black uppercase tracking-wider text-emerald-500 bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 rounded-full">
+                      {item.badge}
                     </span>
                   )}
                 </button>
               ))}
 
-              {/* SEO pages divider */}
+              {/* Revision Guides */}
               <div className="pt-3 mt-3 border-t border-slate-200/60 dark:border-slate-800">
                 <p className="px-4 pb-2 text-[10px] font-black uppercase tracking-widest text-slate-400 dark:text-slate-500">
                   Revision Guides
